@@ -29,7 +29,7 @@ class Usuarios(Base):
 class Productos(Base):
     __tablename__ = "productos"
     id = Column(Integer, primary_key=True, index=True)
-    codigo_barras = Column(String(50), unique=True, index=True)
+    codigo_barras = Column(String(50), unique=True, index=True, nullable=True)
     nombre = Column(String(100), index=True)
     descripcion = Column(String(255), nullable=True)
     precio_venta = Column(Float(10, 2))
