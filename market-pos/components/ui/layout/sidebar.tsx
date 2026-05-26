@@ -12,6 +12,7 @@ import {
   ShoppingCart,
   Banknote,
   BarChart3,
+  KeyRound,
   LogOut,
   Store,
 } from "lucide-react";
@@ -34,6 +35,7 @@ const navSections = [
       { label: "Proveedores", icon: Factory, href: "/dashboard/proveedores" },
       { label: "Compras", icon: ShoppingCart, href: "/dashboard/compras" },
       { label: "Ventas", icon: Banknote, href: "/dashboard/ventas" },
+      { label: "Licencia", icon: KeyRound, href: "/dashboard/licencia" },
     ],
   },
 ];

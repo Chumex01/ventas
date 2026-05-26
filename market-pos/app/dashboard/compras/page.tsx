@@ -157,7 +157,7 @@ export default function ComprasPage() {
     setTimeout(() => addDetalle(), 100);
   };
 
-  const addDetalle = () => setDetalles((prev) => [...prev, { key: `det_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`, producto_id: "", cantidad: "1", precio_unitario: "0" }]);
+ const addDetalle = () => setDetalles((prev) => [...prev, { key: `det_${Date.now()}_${Math.random()}`, producto_id: "", cantidad: "", precio_unitario: "", nombre: "" }]);
   const removeDetalle = (key: string) => setDetalles((prev) => prev.filter((d) => d.key !== key));
   const updateDetalle = (key: string, field: keyof DetalleForm, value: string) => setDetalles((prev) => prev.map((d) => (d.key === key ? { ...d, [field]: value } : d)));
   

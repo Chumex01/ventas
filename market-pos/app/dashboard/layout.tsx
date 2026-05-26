@@ -5,6 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { useAuthStore } from "@/lib/store";
 import { Sidebar, SidebarContent } from "@/components/ui/layout/sidebar";
 import { Header } from "@/components/ui/layout/header";
+import { LicenseGuard } from "@/lib/license-guard";
 import {
   Sheet,
   SheetContent,
@@ -43,20 +44,14 @@ export default function DashboardLayout({
     );
   }
 
-  return (
+// Reemplazá todo el return del componente por esto:
+return (
+  <LicenseGuard>
     <div className="min-h-screen bg-background">
       <Sidebar />
-
       <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-        <SheetContent
-          side="left"
-          className="w-[260px] gap-0 border-border/60 bg-card p-0 [&>button]:hidden"
-        >
-          <SheetTitle className="sr-only">Navegación</SheetTitle>
-          <SidebarContent onClose={() => setMobileOpen(false)} />
-        </SheetContent>
+        {/* ... todo lo demás igual ... */}
       </Sheet>
-
       <div className="flex min-h-screen flex-col lg:ml-[260px]">
         <Header onMenuClick={() => setMobileOpen(true)} />
         <main
@@ -67,5 +62,6 @@ export default function DashboardLayout({
         </main>
       </div>
     </div>
-  );
+  </LicenseGuard>
+);
 }

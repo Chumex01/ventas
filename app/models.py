@@ -136,3 +136,13 @@ class TokenRevocado(Base):
     id = Column(Integer, primary_key=True, index=True)
     token = Column(String(255), unique=True, index=True)  # JWT ID
     fecha_revocacion = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    
+class Licencia(Base):
+    __tablename__ = "licencia"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    clave = Column(String(100), unique=True, nullable=False)
+    plan = Column(String(20), nullable=False)  # mensual, trimestral, anual, vitalicio
+    activa = Column(Boolean, default=True)
+    fecha_activacion = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    fecha_expiracion = Column(DateTime, nullable=True)

@@ -11,6 +11,7 @@ from app.routers import ventas
 from app.routers import productos
 from app.routers import proveedores
 from app.routers import kardex
+from app.routers import licencia
 
 # --- CREACIÓN DE TABLAS EN LA BASE DE DATOS ---
 @asynccontextmanager
@@ -55,3 +56,5 @@ app.include_router(productos.router)
 app.include_router(proveedores.router)
 # Incluimos el router de kardex
 app.include_router(kardex.router)
+# Incluimos el router de licencia
+app.include_router(licencia.router)
