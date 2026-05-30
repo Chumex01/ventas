@@ -46,6 +46,7 @@ export interface Venta {
   fecha: string;
   total: number;
   usuario_nombre: string;
+  rol_nombre: string;
   detalles: DetalleVenta[];
 }
 
@@ -131,6 +132,7 @@ export interface Compra {
   fecha: string;
   estado: boolean;
   proveedor: { id: number; nombre: string } | null;
+  usuario: { id: number; nombre: string; rol: { id: number; nombre: string } } | null;
   detalle_compras: DetalleCompra[];
 }
 
@@ -146,7 +148,17 @@ export interface Venta {
   fecha: string;
   total: number;
   estado: boolean;
-  usuario: { id: number; nombre: string } | null;
+  // Aquí cambiamos el string por el objeto real
+  usuario: { 
+    id: number; 
+    nombre: string; 
+    rol: { 
+      id: number; 
+      nombre: string; 
+      fecha_creacion: string; 
+      estado: boolean 
+    } | null 
+  } | null;
   detalle_ventas: DetalleVenta[];
 }
 

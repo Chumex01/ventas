@@ -96,7 +96,9 @@ export default function VentasPage() {
                         <td className="px-3 py-3 text-muted-foreground"><ChevronDown className={`h-4 w-4 transition-transform ${isExpanded ? "rotate-180" : ""}`} /></td>
                         <td className="px-4 py-3 text-muted-foreground">#{v.id}</td>
                         <td className="px-4 py-3 text-right text-lg font-bold text-emerald-400">Bs {(v.total || 0).toFixed(2)}</td>
-                        <td className="px-4 py-3 text-muted-foreground">{v.usuario?.nombre || "—"}</td>
+                        <td className="px-4 py-3 text-muted-foreground">
+  {v.usuario?.nombre}, {v.usuario?.rol?.nombre || "—"}
+</td>
                         <td className="px-4 py-3 text-muted-foreground">{v.fecha ? new Date(v.fecha).toLocaleString("es-BO", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }) : "—"}</td>
                         <td className="px-4 py-3">{v.estado ? <Badge variant="secondary" className="border-0 bg-emerald-500/10 text-xs text-emerald-400">Activo</Badge> : <Badge variant="secondary" className="border-0 bg-destructive/10 text-xs text-destructive">Anulado</Badge>}</td>
                       </tr>
