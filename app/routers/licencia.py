@@ -10,6 +10,7 @@ from app import models
 router = APIRouter(prefix="/licencia", tags=["licencia"])
 
 DURACIONES = {
+    "demo": 1,
     "mensual": 30,
     "trimestral": 90,
     "anual": 365,
@@ -17,6 +18,7 @@ DURACIONES = {
 }
 
 NOMBRES_PLANES = {
+    "demo": "Plan Demo",
     "mensual": "Plan Mensual",
     "trimestral": "Plan Trimestral",
     "anual": "Plan Anual",

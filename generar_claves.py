@@ -9,6 +9,7 @@ from app import models
 from app.routers.licencia import _generar_clave
 
 CANTIDADES = {
+    "demo": 1,
     "mensual": 50,
     "trimestral": 20,
     "anual": 10,
