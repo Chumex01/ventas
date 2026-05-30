@@ -218,7 +218,7 @@ export default function ComprasPage() {
                         <td className="px-4 py-3 text-muted-foreground">{c.nro_factura}</td>
                         <td className="px-4 py-3 text-muted-foreground">{c.proveedor?.nombre || "—"}</td>
                         <td className="px-4 py-3 text-right font-bold text-blue-400">{formatBs(totalCompra)}</td>
-                        <td className="px-4 py-3 text-muted-foreground">{c.usuario?.nombre || "—"}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{c.usuario?.nombre}, {c.usuario?.rol?.nombre || "—"}</td>
                         <td className="px-4 py-3 text-muted-foreground">{formatFecha(c.fecha)}</td>
                         <td className="px-4 py-3">{c.estado ? <Badge variant="secondary" className="border-0 bg-emerald-500/10 text-xs text-emerald-400">Activo</Badge> : <Badge variant="secondary" className="border-0 bg-destructive/10 text-xs text-destructive">Anulado</Badge>}</td>
                       </tr>
