@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from app.database import SessionLocal
 from app import models
-from app.routers.licencia import _generar_clave
+from app.routers.licencia import generar_clave
 
 CANTIDADES = {
     "demo": 1,
@@ -26,7 +26,7 @@ def main():
     for plan, cantidad in CANTIDADES.items():
         generadas = []
         for _ in range(cantidad):
-            clave = _generar_clave()
+            clave = generar_clave()
             lic = models.Licencia(clave=clave, plan=plan, activa=False)
             db.add(lic)
             generadas.append(clave)
